@@ -32,6 +32,7 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "." # Built app content directory - optional
           skip_app_build: true          # ← これが超重要！
+          github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -45,4 +46,5 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_PLANT_01790EA00 }}
           action: "close"
+
 
